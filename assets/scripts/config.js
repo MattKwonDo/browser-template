@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    production: 'https://ski-list.herokuapp.com/'
+    // https://ga-wdi-boston.herokuapp.com'
   }
 }
 
