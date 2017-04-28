@@ -3,7 +3,7 @@
 const showBooksTemplate = require('../templates/book-listing.handlebars')
 
 // read
-const getBooksSuccess = (data) => {
+const getItemsSuccess = (data) => {
   console.log(data)
   const showBooksHtml = showBooksTemplate({ items: data.new_items })
   // debugger;
@@ -20,7 +20,7 @@ const clearBooks = () => {
   $('.content').empty()
 }
 
-const failure = (error) => {
+const getItemsFailure = (error) => {
   console.error(error)
 }
 
@@ -89,9 +89,9 @@ const deleteItemsFailure = (error) => {
 
 module.exports = {
   // read
-  getBooksSuccess,
+  getItemsSuccess,
+  getItemsFailure,
   clearBooks,
-  failure,
   // create
   createItemsSuccess,
   createItemsFailure,

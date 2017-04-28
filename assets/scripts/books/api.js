@@ -5,7 +5,7 @@ const store = require('../store')
 // const gameStore = require('../gameStore')
 
 // read
-const getBooks = function () {
+const getItems = function () {
   return $.ajax({
     url: app.host + '/new_items', // "http://book-json.herokuapp.com/books"
     method: 'GET',
@@ -34,7 +34,7 @@ const createItems = function () {
 
 // update
 // need to update this to do an ajax method to delete the thing from the database
-// need id included
+// this should run every time the list is updated in the browser? or when the user clicks save?
 const updateItems = function () {
   return $.ajax({
     url: app.host + '/new_items/' + app.user.id, // "http://book-json.herokuapp.com/books"
@@ -52,7 +52,7 @@ const updateItems = function () {
 
 // delete
 // need to update this to do an ajax method to delete the thing from the database
-// need id included
+// this should run every time the list item is deleted? or when the user clicks save?
 const deleteItems = function () {
   return $.ajax({
     url: app.host + '/new_items/' + app.user.id, // "http://book-json.herokuapp.com/books"
@@ -64,7 +64,7 @@ const deleteItems = function () {
 }
 
 module.exports = {
-  getBooks,
+  getItems,
   createItems,
   updateItems,
   deleteItems
