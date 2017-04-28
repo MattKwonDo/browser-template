@@ -51,7 +51,7 @@ google machine if you need further assistance.
 ## Plan your tables and columns
 
 What tables will you need? What will the columns on the table be?
-  - Users
+  - users
     - id
     - name
     - phone_number
@@ -61,7 +61,11 @@ What tables will you need? What will the columns on the table be?
     - emergency_contact_name
     - emergency_contact_phone_number
     - emergency_contact_email
-  - Lists
+  - items
+      - id
+      - item_name
+      - item_description (TBD)
+  - lists (TBD)
     - id
     - user_id
     - list_name
@@ -72,11 +76,7 @@ What tables will you need? What will the columns on the table be?
     - item_id
     - chat_id (TBD)
     - status (TBD)
-  - Items
-    - id
-    - item_name
-    - item_description (TBD)
-  - Chats (TBD)
+  - chats (TBD)
     - id
     - comment
     - list_id

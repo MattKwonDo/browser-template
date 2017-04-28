@@ -1,25 +1,89 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TIC TAC TOE</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags unless you know what you are doing -->
+      <!-- <link rel="stylesheet" type="text/css" href="assets/scripts/index.scss"> -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <div class="row">
+        <div class="col-xs-12">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+          <!-- Button trigger modal -->
+          <button type="button" id="logInButton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Menu
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Main Menu</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group">
+
+                    <form id="sign-up">
+                      <fieldset>
+                        <legend>Sign up!</legend>
+                        <input type="text" name="credentials[email]" id="sign-up-email" placeholder="email please">
+                        <input type="password" name="credentials[password]" id="sign-up-password" placeholder="password please">
+                        <input type="password" name="credentials[password_confirmation]" id="sign-up-password-conf" placeholder="confirm password please">
+                        <input type="submit" name="submit" value="Sign up!">
+                        <div class="errors-sign-up" > </div>
+                      </fieldset>
+                    </form>
+
+                    <form id="sign-in">
+                      <fieldset>
+                        <legend>Sign in!</legend>
+                        <input type="text" name="credentials[email]" id="sign-in-email" placeholder="email please">
+                        <input type="password" name="credentials[password]" id="sign-in-password" placeholder="password please">
+                        <input type="submit" name="submit" value="Sign in!" id='sign-in-box'>
+                        <div class="errors-sign-in" > </div>
+                        <div id="errors-sign-in-image" > </div>
+                      </fieldset>
+                    </form>
+
+                    <form id="sign-out">
+                      <fieldset>
+                        <legend>Sign out!</legend>
+                        <input type="submit" name="submit" value="Sign out!">
+                      </fieldset>
+                    </form>
+
+                    <form id="change-password">
+                      <fieldset>
+                        <legend>Change password!</legend>
+                        <input type="password" name="passwords[old]" id="change-password-old" placeholder="current password please">
+                        <input type="password" name="passwords[new]" id="change-password-new" placeholder="new password please">
+                        <input type="submit" name="submit" value="Change password!">
+                        <div class="errors-change-password" > </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg game-create" data-dismiss="modal" id="game-create">Check out your list!!!</button>
+
+                </div>
+              </div>
+            </div>
+          </div> <!-- end modal -->
+        </div>
+      </div>
+
+<!-- handlebars -->
+      <button id="getBooksButton" class="btn btn-default">Get Books!</button>
+          <button id="clearBooksButton" class="btn btn-default">Clear Books!</button>
+          <div id="content" class="content">
+            <ul>
+            </ul>
+          </div>
+
     </body>
 </html>
