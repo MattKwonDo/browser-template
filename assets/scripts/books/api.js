@@ -36,9 +36,8 @@ const createItems = function () {
 // need to update this to do an ajax method to delete the thing from the database
 // need id included
 const updateItems = function () {
-// need ID here
   return $.ajax({
-    url: app.host + '/new_items/' + ID, // "http://book-json.herokuapp.com/books"
+    url: app.host + '/new_items/' + app.user.id, // "http://book-json.herokuapp.com/books"
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,9 +54,8 @@ const updateItems = function () {
 // need to update this to do an ajax method to delete the thing from the database
 // need id included
 const deleteItems = function () {
-// need ID here
   return $.ajax({
-    url: app.host + '/new_items', // "http://book-json.herokuapp.com/books"
+    url: app.host + '/new_items/' + app.user.id, // "http://book-json.herokuapp.com/books"
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
