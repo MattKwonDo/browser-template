@@ -78,12 +78,35 @@
       </div>
 
 <!-- handlebars -->
-      <button id="getBooksButton" class="btn btn-default">Get Items!</button>
-          <button id="clearBooksButton" class="btn btn-default">Clear Items!</button>
-          <div id="content" class="content">
-            <ul>
-            </ul>
-          </div>
+      <!-- read -->
+      <button id="getBooksButton" class="btn btn-default">Get/Read Items!</button>
+
+      <!-- create -->
+    <div class="input-group">
+      <form id="create-item">
+        <fieldset>
+          <!-- <legend>New Item!</legend> -->
+          <input type="text" name="credentials[email]" id="new-item-id" class="new-item-class" placeholder="new list item">
+          <input type="submit" name="submit" value="Add Item!" class="new-item-class" >
+          <div class="errors-new-item" > </div>
+        </fieldset>
+      </form>
+      <button id="createBooksButton" class="btn btn-default new-item-class">Create Items!</button>
+    </div>
+
+      <!-- update -->
+      <button id="updateBooksButton" class="btn btn-default">Update Items!</button>
+
+      <!-- delete -->
+      <button id="deleteBooksButton" class="btn btn-default">Delete Items!</button>
+
+      <!-- clear -->
+      <button id="clearBooksButton" class="btn btn-default">Clear Items!</button>
+
+        <div id="content" class="content">
+          <ul>
+          </ul>
+        </div>
 
     </body>
 </html>

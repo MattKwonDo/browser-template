@@ -4,11 +4,14 @@ const showBooksTemplate = require('../templates/book-listing.handlebars');
 
 const getBooksSuccess = (data) => {
   console.log(data);
-  let showBooksHtml = showBooksTemplate({ books: data.books });
+  let showBooksHtml = showBooksTemplate({ items: data.new_items });
   // debugger;
   $('.content').append(showBooksHtml);
-  // console.log(data.books[0])
-  // console.log(data.books[0].id)
+  console.log(data.new_items)
+  console.log(data.new_items[0])
+  console.log(data.new_items[0].name)
+  console.log(data.new_items[1].user)
+  console.log(data.new_items[2].user_id)
   $('.removeBooksButton').on('click', removeBooksSuccess);
 };
 

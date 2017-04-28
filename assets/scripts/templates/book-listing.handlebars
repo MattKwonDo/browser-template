@@ -1,28 +1,32 @@
-{{#each books as |book|}}
+{{#each items as |item|}}
 
 <!-- {{> partial}} -->
 
  <!-- Developers, why are we using data-id and not just id? -->
   <!-- <h1 > </h1> -->
-  <ul data-id="{{book.id}}" class="removeBooks {{book.id}}">
-    <li class="removeBooks {{book.id}}">
-      Title: {{book.title}}
-    </li>
-    <li class="removeBooks {{book.id}}">
+  <ul data-id="{{item.id}}" class="removeBooks {{item.id}}">
+  <div class="removeBooks {{item.id}}"> item.id: {{item}} {{item.id}} </div>
+    <!-- <li class="removeBooks {{item.id}}">
+      Title: {{item.id}}
+    </li> -->
+    <li class="removeBooks {{item.id}}">
       <small>
-        {{#if book.description}}
-          {{book.description}}
+        {{#if item.name}}
+          {{item.name}}
         {{else}}
-          No description.
+          No name.
         {{/if}}
       </small>
     </li>
     <li>
-      <button type="button" id="{{book.id}}" class="removeBooks removeBooksButton {{book.id}}" >
+      <button type="button" id="{{item.id}}" class="removeBooks removeBooksButton {{item.id}}" >
         Remove
+      </button>
+      <button type="button" id="{{item.id}}" class="removeBooks removeBooksButton {{item.id}}" >
+        <!-- need a form or something here -->
+        Update
       </button>
     </li>
   </ul>
-  <div class="{{book.id}}"> book.id: {{book.id}} </div>
 
 {{/each}}
