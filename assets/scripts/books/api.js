@@ -33,7 +33,7 @@ const createItems = function () {
 }
 
 // update
-// need to update this to do an ajax method to delete the thing from the database
+// need to probably update this path to find the item id, not just the user id
 // this should run every time the list is updated in the browser? or when the user clicks save?
 const updateItems = function () {
   return $.ajax({
@@ -51,7 +51,7 @@ const updateItems = function () {
 }
 
 // delete
-// need to update this to do an ajax method to delete the thing from the database
+// need to probably update this path to find the item id, not just the user id
 // this should run every time the list item is deleted? or when the user clicks save?
 const deleteItems = function () {
   return $.ajax({
