@@ -16,21 +16,34 @@ const getItems = function () {
 }
 
 // create
-// need to update this to do an ajax method to delete the thing from the database
-const createItems = function () {
+// need to update this to use form input
+const createItem = function (ajaxSend) {
   return $.ajax({
     url: app.host + '/new_items', // "http://book-json.herokuapp.com/books"
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'new_item': {
-        'name': 'ajax_glove'
-      }
-    }
+    // data: {
+    //   'new_item': {
+    //     'name': 'ajax_glove' // this should be from the form
+    //   }
+    // }
+    data: ajaxSend
   })
 }
+
+// delete this once createItem is working
+// const updateGameState = (ajaxSend) => {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + gameStore.game.id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: ajaxSend
+//   })
+// }
 
 // update
 // need to probably update this path to find the item id, not just the user id
@@ -65,7 +78,7 @@ const deleteItems = function () {
 
 module.exports = {
   getItems,
-  createItems,
+  createItem,
   updateItems,
   deleteItems
 }
