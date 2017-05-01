@@ -7,7 +7,7 @@ const getItemsSuccess = (data) => {
   console.log(data)
   const showBooksHtml = showBooksTemplate({ items: data.new_items })
   // debugger;
-  $('.content').append(showBooksHtml)
+  $('.content').html(showBooksHtml)
   console.log(data.new_items)
   console.log(data.new_items[0])
   console.log(data.new_items[0].id)
@@ -21,7 +21,7 @@ const getItem29Success = (data) => {
   console.log(data)
   // const showBooksHtml = showBooksTemplate({ items: data.new_item })
   // debugger;
-  // $('.content').append(showBooksHtml)
+  // $('.content').html(showBooksHtml)
   console.log(data.new_item)
   // console.log(data.new_item[0]) // doesn't work for individual item
   console.log(data.new_item.id)

@@ -50,31 +50,70 @@ const onUpdateItem = (event) => {
   event.preventDefault()
   console.log('event: ')
   console.log(event)
-  console.log('this: ') // undefined
-  console.log(this) // undefined
-  // console.log(event.id)
-  // console.log('this: ' + this)
+  const id = event.target.id
+  console.log('id: ' + id)
+  const item = 'input-' + event.target.id
+  // const item = this.attr('data-id')
+  console.log('item: ' + item)
+
+  const data = getFormFields(id)
+  console.log(data)
+
+  console.log($(this).data('id'))
   console.log($(this).attr('data-id')) // undefined
-  // console.log(.data())
-  console.log($(this).data('id')) // undefined
   console.log(event)
   console.log(event.target)
   console.log(event.target.id)
-  console.log(event)
-  const id = $(this).attr('data-id')
-  const data = getFormFields(id)
-  console.log(data)
-  console.log('updating: ', id)
-  $(this).closest('div').slideToggle()
 
-  const item = 29
-  // const nameValue = document.getElementById('update-item-input').value
-  // console.log('this value' + document.getElementById(this).value)
-  // console.log('this value' + document.getElementById(this).value)
-  // console.log(data)
+  console.log('item: ' + item)
   console.log('document: ')
   console.log(document)
-  const nameValue = document.getElementById('update-item-input').value
+  const nameValue = document.getElementById(item).value // this needs to be the id of the input field
+  // const nameValue = document.getElementById('update-item-input-29').value // this needs to be the id of the input field
+  console.log('field input :' + nameValue)
+
+  console.log(event)
+  const ajaxSend = {
+    'new_item': {
+      'name': nameValue // this should be from the form
+    }
+  }
+  api.updateItem(id, ajaxSend)
+    .then(ui.updateItemsSuccess)
+    .catch(ui.updateItemsFailure)
+}
+
+const onUpdateItem29 = (event) => {
+  // const data = getFormFields(this)
+  event.preventDefault()
+  console.log('event: ')
+  console.log(event)
+  const id = event.target.id
+  console.log('id: ' + id)
+  const item = 29
+  console.log('item: ' + item)
+
+  const data = getFormFields(id)
+  console.log(data)
+
+console.log($(this).data('id'))
+
+  // $(this).closest('div').slideToggle()
+  const thisId = $(this).data('id')
+  console.log('thisid: ' + thisId)
+
+  // const nameValue = document.getElementById('update-item-input').value
+  // console.log('this value' + document.getElementById(this).value)
+  // console.log(data)
+
+  // console.log('document: ')
+  // console.log(document)
+  // const nameValue = document.getElementById(event.target.id).value // this needs to be the id of the input field
+// get field input
+  const nameValue = document.getElementById('29').value // this needs to be the id of the input field
+  console.log(nameValue)
+  console.log(document.getElementById(id).value)
+  console.log(document.getElementById(event.target.id).value)
   console.log('field input :' + nameValue)
 
   console.log(event)
@@ -108,6 +147,10 @@ const onDeleteItem5 = (event) => {
     .catch(ui.deleteItemsFailure)
 }
 
+const onClick = (event) => {
+  event.preventDefault()
+}
+
 const addHandlers = () => {
   // create
   $('#create-item').on('submit', onCreateItem)
@@ -119,8 +162,8 @@ const addHandlers = () => {
   // update
 // what's the reason for using click as opposed to submit here?
   // $('#updateItemsButton').on('submit', onUpdateItem)
-  $('#update-item-29').on('submit', onUpdateItem)
-  $('.update-group').on('click', onUpdateItem)
+  $('.update-item').on('submit', onUpdateItem29)
+  $('.update-group').on('submit', onUpdateItem)
   $('#2').on('submit', onUpdateItem)
   // delete
 // do we need clear anymore?
@@ -130,6 +173,7 @@ const addHandlers = () => {
   $('#deleteItem5Button').on('click', onDeleteItem5)
   // $('.removeBooksButton').on('click', removeBooksSuccess)
   // $(document).on('click', '.update-group', boardActions.onGetBoard)
+  // $('.content').on('click', onClick)
 }
 
 module.exports = {
