@@ -14,6 +14,16 @@ const getItems = function () {
     }
   })
 }
+// read item 29
+const getItem29 = function () {
+  return $.ajax({
+    url: app.host + '/new_items/29', // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 // create
 // need to update this to use form input
@@ -24,11 +34,6 @@ const createItem = function (ajaxSend) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    // data: {
-    //   'new_item': {
-    //     'name': 'ajax_glove' // this should be from the form
-    //   }
-    // }
     data: ajaxSend
   })
 }
@@ -48,18 +53,14 @@ const createItem = function (ajaxSend) {
 // update
 // need to probably update this path to find the item id, not just the user id
 // this should run every time the list is updated in the browser? or when the user clicks save?
-const updateItems = function () {
+const updateItem = function (item, ajaxSend) {
   return $.ajax({
-    url: app.host + '/new_items/' + app.user.id, // "http://book-json.herokuapp.com/books"
+    url: app.host + '/new_items/' + item, // "http://book-json.herokuapp.com/books"
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'new_item': {
-        'name': 'ajax_glove'
-      }
-    }
+    data: ajaxSend
   })
 }
 
@@ -78,7 +79,8 @@ const deleteItems = function () {
 
 module.exports = {
   getItems,
+  getItem29,
   createItem,
-  updateItems,
+  updateItem,
   deleteItems
 }

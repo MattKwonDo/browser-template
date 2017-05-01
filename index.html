@@ -80,6 +80,7 @@
 <!-- handlebars -->
       <!-- read -->
       <button id="getItemsButton" class="btn btn-default">Get/Read Items!</button>
+      <button id="getItem29Button" class="btn btn-default">Get/Read Item 29!</button>
 
       <!-- create -->
     <div class="input-group">
@@ -94,19 +95,20 @@
       </form>
     </div>
 
-    <form id="sign-up">
-      <fieldset>
-        <legend>Sign up!</legend>
-        <input type="text" name="credentials[email]" id="sign-up-email" placeholder="email please">
-        <input type="password" name="credentials[password]" id="sign-up-password" placeholder="password please">
-        <input type="password" name="credentials[password_confirmation]" id="sign-up-password-conf" placeholder="confirm password please">
-        <input type="submit" name="submit" value="Sign up!">
-        <div class="errors-sign-up" > </div>
-      </fieldset>
-    </form>
-
       <!-- update -->
       <button id="updateItemsButton" class="btn btn-default">Update Items!</button>
+
+      <div class="input-group">
+        <form id="update-item-29">
+          <fieldset>
+            <!-- <legend>New Item!</legend> -->
+            <input type="text" id="update-item-input" class="update-item-class" placeholder="item 29 current text"> <!-- name="items[new]"> -->
+            <input type="submit" value="Update Item 29!" id="updateItem29Button" class="update-item-class" > <!-- name="submit"  -->
+            <div class="errors-update-item" > </div>
+          </fieldset>
+          <!-- <button id="createItemsButton" class="btn btn-default new-item-class">Create Items!</button> -->
+        </form>
+      </div>
 
       <!-- delete -->
       <button id="deleteItemsButton" class="btn btn-default">Delete Items!</button>
