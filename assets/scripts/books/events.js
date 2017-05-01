@@ -101,6 +101,13 @@ const onDeleteItems = (event) => {
     .catch(ui.deleteItemsFailure)
 }
 
+const onDeleteItem5 = (event) => {
+  event.preventDefault()
+  api.deleteItems(5)
+    .then(ui.deleteItemsSuccess)
+    .catch(ui.deleteItemsFailure)
+}
+
 const addHandlers = () => {
   // create
   $('#create-item').on('submit', onCreateItem)
@@ -120,7 +127,7 @@ const addHandlers = () => {
 // what's the reason for using click as opposed to submit here?
   $('#clearBooksButton').on('click', onClearBooks)
   $('#deleteItemsButton').on('click', onDeleteItems)
-  $('#deleteItem29Button').on('click', onDeleteItems)
+  $('#deleteItem5Button').on('click', onDeleteItem5)
   // $('.removeBooksButton').on('click', removeBooksSuccess)
   // $(document).on('click', '.update-group', boardActions.onGetBoard)
 }

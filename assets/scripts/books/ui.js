@@ -104,18 +104,7 @@ const removeBooksFailure = (error) => {
 
 // this is redundant with the removeBooksSuccess
 const deleteItemsSuccess = (data) => {
-  console.log(data)
-  console.log(data.target)
-  console.log(data.target.id)
-  console.log(data)
-  console.log(data.new_item)
-  console.log(data.new_item.id)
-  console.log(data.new_item.name)
-  console.log(data.new_item.user)
-  console.log(data.new_item.user_id)
-  // console.log('book_id: ' + book_id)
-
-  console.log('data.new_item.id: ' + data.new_item.id)
+  console.log('delete success')
   // $('.' + data.target.id).hide()
 }
 
