@@ -4,11 +4,8 @@
 
  <!-- Developers, why are we using data-id and not just id? -->
   <!-- <h1 > </h1> -->
-  <ul data-id="{{item.id}}" class="removeBooks {{item.id}}">
-  <div class="removeBooks {{item.id}}"> item.id: {{item}} {{item.id}} </div>
-    <!-- <li class="removeBooks {{item.id}}">
-      Title: {{item.id}}
-    </li> -->
+<div data-id="{{item.id}}" class="removeBooks {{item.id}}"> item.id: {{item.id}} </div>
+  <ul class="removeBooks {{item.id}}">
     <li class="removeBooks {{item.id}}">
       <small>
         {{#if item.name}}
@@ -18,15 +15,24 @@
         {{/if}}
       </small>
     </li>
-    <li>
-      <button type="button" id="{{item.id}}" class="removeBooks removeBooksButton {{item.id}}" >
-        Remove
-      </button>
-      <button type="button" id="{{item.id}}" class="removeBooks removeBooksButton {{item.id}}" >
-        <!-- need a form or something here -->
-        Update
-      </button>
-    </li>
   </ul>
+  <div class="update-group {{item.id}}" data-id="{{item.id}}">
+    <button type="button" id={{item.id}} class="removeBooks removeBooksButton {{item.id}}" >
+      Remove
+    </button>
+    <button type="button" class="removeBooks removeBooksButton {{item.id}}" >
+      <!-- need a form or something here -->
+      Update
+    </button>
+    <form class="update-group" id="{{item.id}}">
+      <fieldset>
+        <!-- <legend>New Item!</legend> -->
+        <input type="text" id="{{item.id}}" class="update-item-class" placeholder="item 29 current text"> <!-- name="items[new]"> -->
+        <input type="submit" value="Update Item 29!" id="updateItem29Button" class="update-item-class" > <!-- name="submit"  -->
+        <div class="errors-update-item" > </div>
+      </fieldset>
+      <!-- <button id="createItemsButton" class="btn btn-default new-item-class">Create Items!</button> -->
+    </form>
+  </div>
 
 {{/each}}

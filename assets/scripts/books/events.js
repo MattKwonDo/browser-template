@@ -31,6 +31,9 @@ const onCreateItem = function (event) {
   console.log('field input :' + nameValue)
 
   console.log(event)
+  console.log(event.target)
+  console.log(event.target.id)
+  console.log(event)
   const ajaxSend = {
     'new_item': {
       'name': nameValue // this should be from the form
@@ -45,9 +48,30 @@ const onCreateItem = function (event) {
 const onUpdateItem = (event) => {
   // const data = getFormFields(this)
   event.preventDefault()
-  console.log(this)
-  // console.log(this.id)
+  console.log('event: ')
+  console.log(event)
+  console.log('this: ') // undefined
+  console.log(this) // undefined
+  // console.log(event.id)
+  // console.log('this: ' + this)
+  console.log($(this).attr('data-id')) // undefined
+  // console.log(.data())
+  console.log($(this).data('id')) // undefined
+  console.log(event)
+  console.log(event.target)
+  console.log(event.target.id)
+  console.log(event)
+  // console.log('new_item')
+  // console.log(event.new_item)
+  // // console.log(event.new_item.id)
+  // console.log(event.new_item.name)
+  // console.log(event.new_item.user)
+  // console.log(event.new_item.user_id)
+
   const item = 29
+  // const nameValue = document.getElementById('update-item-input').value
+  // console.log('this value' + document.getElementById(this).value)
+  // console.log('this value' + document.getElementById(this).value)
   // console.log(data)
   console.log('document: ')
   console.log(document)
@@ -90,11 +114,15 @@ const addHandlers = () => {
 // what's the reason for using click as opposed to submit here?
   $('#updateItemsButton').on('submit', onUpdateItem)
   $('#update-item-29').on('submit', onUpdateItem)
+  $('.update-group').on('submit', onUpdateItem)
+  $('#3').on('submit', onUpdateItem)
   // delete
 // do we need clear anymore?
 // what's the reason for using click as opposed to submit here?
   $('#clearBooksButton').on('click', onClearBooks)
   $('#deleteItemsButton').on('click', onDeleteItems)
+  // $('.removeBooksButton').on('click', removeBooksSuccess)
+  // $(document).on('click', '.update-group', boardActions.onGetBoard)
 }
 
 module.exports = {
