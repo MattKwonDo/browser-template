@@ -7,13 +7,14 @@ const getItemsSuccess = (data) => {
   console.log(data)
   const showBooksHtml = showBooksTemplate({ items: data.new_items })
   // debugger;
-  $('.content').html(showBooksHtml)
+  $('.content').html(showBooksHtml).order
   console.log(data.new_items)
   console.log(data.new_items[0])
   console.log(data.new_items[0].id)
   console.log(data.new_items[0].name)
   console.log(data.new_items[0].user)
   console.log(data.new_items[0].user_id)
+// is this needed??
   $('.removeBooksButton').on('click', removeBooksSuccess)
 }
 
@@ -40,8 +41,9 @@ const getItemsFailure = (error) => {
 }
 
 // create
-// need to update this to do an ajax method to delete the thing from the database
+// need to update this to show the data with an ajax call possibly from the database, possibly with an append child, but that would be messier
 const createItemsSuccess = (data) => {
+// append data to the end with an append child?
   console.log(data)
   console.log(data.new_item)
   console.log(data.new_item.id)
@@ -105,9 +107,10 @@ const removeBooksFailure = (error) => {
 }
 
 // this is redundant with the removeBooksSuccess
-const deleteItemsSuccess = (data) => {
+const deleteItemsSuccess = (id) => {
   console.log('delete success')
-  // $('.' + data.target.id).hide()
+  console.log(id)
+  $('#total-' + id).hide()
 }
 
 const deleteItemsFailure = (error) => {

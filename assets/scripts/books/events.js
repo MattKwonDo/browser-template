@@ -144,12 +144,13 @@ const onDeleteItems = () => {
   // console.log(data)
   console.log('test')
   console.log($(this).data('id'))
+  console.log(this)
 
   // console.log($(this).data('id'))
   // console.log($(this).attr('data-id')) // undefined
 
   api.deleteItems(id)
-    .then(ui.deleteItemsSuccess)
+    .then(ui.deleteItemsSuccess(id))
     .catch(ui.deleteItemsFailure)
 }
 
