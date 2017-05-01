@@ -4,7 +4,7 @@
 
  <!-- Developers, why are we using data-id and not just id? -->
   <!-- <h1 > </h1> -->
-<div data-id="{{item.id}}" class="removeBooks {{item.id}}"> item.id: {{item.id}} </div>
+<div id="total-{{item.id}}" data-id="{{item.id}}" class="removeBooks {{item.id}}"> item.id: {{item.id}} </div>
   <ul class="removeBooks {{item.id}}">
     <li class="removeBooks {{item.id}}">
       <small>
@@ -16,23 +16,30 @@
       </small>
     </li>
   </ul>
-  <div class="remove-group {{item.id}}" data-id="{{item.id}}">
-    <button type="button" class="removeBooks removeBooksButton {{item.id}}" >
-      Remove
-    </button>
+    <!-- <button type="button" id="remove-{{item.id}}" class="deleteItemsButton content"> -->
+       <!-- remove-group {{item.id}}" > -->
+      <!-- Remove -->
+    <!-- </button> -->
+    <form class="remove-group {{item.id}} content" id="{{item.id}}">       <!-- need class = content to be associated with a div in index.html for it to work and have event handlers -->
+      <fieldset>
+        <input type="submit" data-id="{{item.id}}" value="Remove Item!" class="remove-item-class" > <!-- name="submit"  -->
+        <div class="errors-remove-item" > </div>
+      </fieldset>
+      <!-- <button id="createItemsButton" class="btn btn-default new-item-class">Create Items!</button> -->
+    </form>
+
     <!-- <button type="button" class="removeBooks removeBooksButton {{item.id}}" > -->
       <!-- need a form or something here -->
       <!-- Update
     </button> -->
-    <form class="update-group {{item.id}} content" id="{{item.id}}">
+    <form class="update-group {{item.id}} content" id="{{item.id}}">       <!-- need class = content to be associated with a div in index.html for it to work and have event handlers -->
       <fieldset>
         <!-- <legend>New Item!</legend> -->
-        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="item 29 current text"> <!-- name="items[new]"> -->
-        <input type="submit" value="Update Item 29!" class="update-item-class" > <!-- name="submit"  -->
+        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="{{item.name}}" require> <!-- name="items[new]"> -->
+        <input type="submit" value="Update Item!" class="update-item-class" > <!-- name="submit"  -->
         <div class="errors-update-item" > </div>
       </fieldset>
       <!-- <button id="createItemsButton" class="btn btn-default new-item-class">Create Items!</button> -->
     </form>
-  </div>
 
 {{/each}}

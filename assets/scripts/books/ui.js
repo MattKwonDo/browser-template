@@ -52,10 +52,13 @@ const createItemsSuccess = (data) => {
 
   console.log('data.new_items.id: ' + data.new_item.id)
   // $('.' + data.new_item.id).hide()
+  // const showBooksHtml = showBooksTemplate({ items: data.new_item })
+  // $('.content').append(showBooksHtml)
 }
 
 const createItemsFailure = (error) => {
   console.error(error)
+  $('#errors-create-item').text('Uh uh uh, you didnt say the magic word')
 }
 
 // update
@@ -92,7 +95,6 @@ const removeBooksSuccess = (data) => {
   // console.log(data.new_item.name)
   // console.log(data.new_item.user)
   // console.log(data.new_item.user_id)
-  // console.log('book_id: ' + book_id)
 
   // console.log('data.new_item.id: ' + data.new_item.id)
   // $('.' + data.target.id).hide() // pulls id attribute for the clicked object and then hides it

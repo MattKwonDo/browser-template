@@ -58,16 +58,12 @@ const onUpdateItem = (event) => {
 
   const data = getFormFields(id)
   console.log(data)
-
   console.log($(this).data('id'))
-  console.log($(this).attr('data-id')) // undefined
-  console.log(event)
-  console.log(event.target)
-  console.log(event.target.id)
+  // console.log($(this).data('id'))
+  // console.log($(this).attr('data-id')) // undefined
 
-  console.log('item: ' + item)
-  console.log('document: ')
-  console.log(document)
+  // console.log('document: ')
+  // console.log(document)
   const nameValue = document.getElementById(item).value // this needs to be the id of the input field
   // const nameValue = document.getElementById('update-item-input-29').value // this needs to be the id of the input field
   console.log('field input :' + nameValue)
@@ -96,7 +92,7 @@ const onUpdateItem29 = (event) => {
   const data = getFormFields(id)
   console.log(data)
 
-console.log($(this).data('id'))
+  console.log($(this).data('id'))
 
   // $(this).closest('div').slideToggle()
   const thisId = $(this).data('id')
@@ -133,9 +129,26 @@ const onClearBooks = (event) => {
   ui.clearBooks()
 }
 
-const onDeleteItems = (event) => {
+const onDeleteItems = () => {
+  // const data = getFormFields(this)
   event.preventDefault()
-  api.deleteItems()
+  console.log('event: ')
+  console.log(event)
+  const id = event.target.id
+  console.log('id: ' + id)
+  const item = 'input-' + event.target.id
+  // const item = this.attr('data-id')
+  console.log('item: ' + item)
+
+  // const data = getFormFields(id)
+  // console.log(data)
+  console.log('test')
+  console.log($(this).data('id'))
+
+  // console.log($(this).data('id'))
+  // console.log($(this).attr('data-id')) // undefined
+
+  api.deleteItems(id)
     .then(ui.deleteItemsSuccess)
     .catch(ui.deleteItemsFailure)
 }
@@ -152,25 +165,31 @@ const onClick = (event) => {
 }
 
 const addHandlers = () => {
-  // create
+// create
   $('#create-item').on('submit', onCreateItem)
   // $('#sign-up').on('submit', onSignUp)
-  // read
+// read
 // what's the reason for using click as opposed to submit here?
   $('#getItemsButton').on('click', onGetItems)
   $('#getItem29Button').on('click', onGetItem29)
-  // update
+// update
 // what's the reason for using click as opposed to submit here?
   // $('#updateItemsButton').on('submit', onUpdateItem)
   $('.update-item').on('submit', onUpdateItem29)
-  $('.update-group').on('submit', onUpdateItem)
-  $('#2').on('submit', onUpdateItem)
-  // delete
+  $('.content').on('submit', '.update-group', onUpdateItem)
+  // $('#2').on('submit', onUpdateItem)
+// delete
 // do we need clear anymore?
 // what's the reason for using click as opposed to submit here?
+
   $('#clearBooksButton').on('click', onClearBooks)
-  $('#deleteItemsButton').on('click', onDeleteItems)
-  $('#deleteItem5Button').on('click', onDeleteItem5)
+  $('.content').on('submit', '.remove-group', onDeleteItems)
+  // $('.remove-group').on('submit', onDeleteItems)
+  // $('.remove-group').on('submit', onDeleteItems)
+
+  // $('.deleteItemsButton').on('click', onDeleteItems)
+
+  // $('#deleteItem5Button').on('click', onDeleteItem5)
   // $('.removeBooksButton').on('click', removeBooksSuccess)
   // $(document).on('click', '.update-group', boardActions.onGetBoard)
   // $('.content').on('click', onClick)
