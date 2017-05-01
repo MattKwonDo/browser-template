@@ -61,12 +61,11 @@ const onUpdateItem = (event) => {
   console.log(event.target)
   console.log(event.target.id)
   console.log(event)
-  // console.log('new_item')
-  // console.log(event.new_item)
-  // // console.log(event.new_item.id)
-  // console.log(event.new_item.name)
-  // console.log(event.new_item.user)
-  // console.log(event.new_item.user_id)
+  const id = $(this).attr('data-id')
+  const data = getFormFields(id)
+  console.log(data)
+  console.log('updating: ', id)
+  $(this).closest('div').slideToggle()
 
   const item = 29
   // const nameValue = document.getElementById('update-item-input').value
