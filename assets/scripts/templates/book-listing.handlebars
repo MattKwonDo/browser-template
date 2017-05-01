@@ -35,7 +35,7 @@
     <form class="update-group {{item.id}} content" id="{{item.id}}">       <!-- need class = content to be associated with a div in index.html for it to work and have event handlers -->
       <fieldset>
         <!-- <legend>New Item!</legend> -->
-        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="{{item.name}}" require> <!-- name="items[new]"> -->
+        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="{{item.name}}" required> <!-- name="items[new]"> -->
         <input type="submit" value="Update Item!" class="update-item-class" > <!-- name="submit"  -->
         <div class="errors-update-item" > </div>
       </fieldset>
