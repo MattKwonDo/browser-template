@@ -16,19 +16,19 @@
       </small>
     </li>
   </ul>
-  <div class="update-group {{item.id}}" data-id="{{item.id}}">
-    <button type="button" id={{item.id}} class="removeBooks removeBooksButton {{item.id}}" >
+  <div class="remove-group {{item.id}}" data-id="{{item.id}}">
+    <button type="button" class="removeBooks removeBooksButton {{item.id}}" >
       Remove
     </button>
-    <button type="button" class="removeBooks removeBooksButton {{item.id}}" >
+    <!-- <button type="button" class="removeBooks removeBooksButton {{item.id}}" > -->
       <!-- need a form or something here -->
-      Update
-    </button>
-    <form class="update-group" id="{{item.id}}">
+      <!-- Update
+    </button> -->
+    <form class="update-group {{item.id}}" id="{{item.id}}">
       <fieldset>
         <!-- <legend>New Item!</legend> -->
-        <input type="text" id="{{item.id}}" class="update-item-class" placeholder="item 29 current text"> <!-- name="items[new]"> -->
-        <input type="submit" value="Update Item 29!" id="updateItem29Button" class="update-item-class" > <!-- name="submit"  -->
+        <input type="text" class="update-item-class {{item.id}}" placeholder="item 29 current text"> <!-- name="items[new]"> -->
+        <input type="submit" value="Update Item 29!" class="update-item-class" > <!-- name="submit"  -->
         <div class="errors-update-item" > </div>
       </fieldset>
       <!-- <button id="createItemsButton" class="btn btn-default new-item-class">Create Items!</button> -->

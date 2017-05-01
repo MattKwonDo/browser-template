@@ -17,6 +17,20 @@ const getItemsSuccess = (data) => {
   $('.removeBooksButton').on('click', removeBooksSuccess)
 }
 
+const getItem29Success = (data) => {
+  console.log(data)
+  // const showBooksHtml = showBooksTemplate({ items: data.new_item })
+  // debugger;
+  // $('.content').append(showBooksHtml)
+  console.log(data.new_item)
+  // console.log(data.new_item[0]) // doesn't work for individual item
+  console.log(data.new_item.id)
+  console.log(data.new_item.name)
+  console.log(data.new_item.user)
+  console.log(data.new_item.user_id)
+  $('.removeBooksButton').on('click', removeBooksSuccess)
+}
+
 const clearBooks = () => {
   $('.content').empty()
 }
@@ -113,6 +127,7 @@ module.exports = {
   // read
   getItemsSuccess,
   getItemsFailure,
+  getItem29Success,
   clearBooks,
   // create
   createItemsSuccess,

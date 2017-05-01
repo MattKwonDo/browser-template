@@ -14,7 +14,7 @@ const onGetItems = (event) => {
 const onGetItem29 = (event) => {
   event.preventDefault()
   api.getItem29()
-    .then(ui.getItemsSuccess)
+    .then(ui.getItem29Success)
     .catch(ui.getItemsFailure)
 }
 
@@ -112,15 +112,16 @@ const addHandlers = () => {
   $('#getItem29Button').on('click', onGetItem29)
   // update
 // what's the reason for using click as opposed to submit here?
-  $('#updateItemsButton').on('submit', onUpdateItem)
+  // $('#updateItemsButton').on('submit', onUpdateItem)
   $('#update-item-29').on('submit', onUpdateItem)
-  $('.update-group').on('submit', onUpdateItem)
-  $('#3').on('submit', onUpdateItem)
+  $('.update-group').on('click', onUpdateItem)
+  $('#2').on('submit', onUpdateItem)
   // delete
 // do we need clear anymore?
 // what's the reason for using click as opposed to submit here?
   $('#clearBooksButton').on('click', onClearBooks)
   $('#deleteItemsButton').on('click', onDeleteItems)
+  $('#deleteItem29Button').on('click', onDeleteItems)
   // $('.removeBooksButton').on('click', removeBooksSuccess)
   // $(document).on('click', '.update-group', boardActions.onGetBoard)
 }
