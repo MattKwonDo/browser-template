@@ -1,0 +1,24 @@
+{{#each items as |item|}}
+
+<!-- {{> partial}} -->
+
+<div id="total-{{item.id}}" data-id="{{item.id}}" class="removeItems {{item.id}}">
+  <li class="removeItems {{item.id}}">
+<!-- update -->
+    <form class="update-group {{item.id}} content" id="{{item.id}}">
+      <fieldset>
+        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="{{item.name}}" required>
+        <input type="submit" value="Update Item!" class="update-item-class">
+        <div class="errors-update-item" > </div>
+      </fieldset>
+    </form>
+<!-- remove -->
+    <form class="remove-group {{item.id}} content" id="{{item.id}}">
+      <fieldset>
+        <input type="submit" data-id="{{item.id}}" value="Remove Item!" class="remove-item-class">
+        <div class="errors-remove-item" > </div>
+      </fieldset>
+    </form>
+  </li>
+</div>
+{{/each}}
