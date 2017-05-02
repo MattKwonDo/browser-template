@@ -46,7 +46,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#change-password').hide()
-  $('#game-create').hide()
+  $('#show-screen').hide()
   $('#sign-out').hide()
   $('#myModal').modal('show')
 }

@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports = {
-  host: 'https://ski-list.herokuapp.com'
-  // host: 'https://wdi-my-library.herokuapp.com',
+// change this before deploy
+  // host: 'https://ski-list.herokuapp.com'
+  host: 'http://localhost:4741'
 }

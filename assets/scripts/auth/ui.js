@@ -1,13 +1,9 @@
 'use strict'
-// const setup = require('../setup')
-// // game id data
-// const gameStore = require('./gameStore')
+const ui = require('../books/ui')
 
 const store = require('../store')
-// let refData = ''
 
 const signUpSuccess = (data) => {
-  // refData = 'x'
   $('.errors-sign-up').text('')
 }
 const signUpFailure = () => {
@@ -18,7 +14,7 @@ const signInSuccess = (data) => {
   store.user = data.user
   // show diff modal pieces
   $('#change-password').show()
-  $('#game-create').show()
+  $('#show-screen').show()
   $('#sign-out').show()
   // hide sign-up modal piece until sign-out
   $('#sign-up').hide()
@@ -41,8 +37,9 @@ const signOutSuccess = () => {
   $('#sign-up').show()
   $('#sign-in').show()
   $('#change-password').hide()
-  $('#game-create').hide()
+  $('#show-screen').hide()
   $('#sign-out').hide()
+  ui.clearBooks()
 }
 
 const signOutFailure = () => {

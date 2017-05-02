@@ -1,13 +1,12 @@
 'use strict'
 
-const app = require('../app.js')
+const config = require('../config')
 const store = require('../store')
-// const gameStore = require('../gameStore')
 
 // read
 const getItems = function () {
   return $.ajax({
-    url: app.host + '/new_items', // "http://book-json.herokuapp.com/books"
+    url: config.host + '/new_items', // "http://book-json.herokuapp.com/books"
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -17,7 +16,7 @@ const getItems = function () {
 // read item 29
 const getItem29 = function () {
   return $.ajax({
-    url: app.host + '/new_items/29', // "http://book-json.herokuapp.com/books"
+    url: config.host + '/new_items/29', // "http://book-json.herokuapp.com/books"
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -29,7 +28,7 @@ const getItem29 = function () {
 // need to update this to use form input
 const createItem = function (ajaxSend) {
   return $.ajax({
-    url: app.host + '/new_items', // "http://book-json.herokuapp.com/books"
+    url: config.host + '/new_items', // "http://book-json.herokuapp.com/books"
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,7 +54,7 @@ const createItem = function (ajaxSend) {
 // this should run every time the list is updated in the browser? or when the user clicks save?
 const updateItem = function (item, ajaxSend) {
   return $.ajax({
-    url: app.host + '/new_items/' + item, // "http://book-json.herokuapp.com/books"
+    url: config.host + '/new_items/' + item, // "http://book-json.herokuapp.com/books"
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -69,7 +68,7 @@ const updateItem = function (item, ajaxSend) {
 // this should run every time the list item is deleted? or when the user clicks save?
 const deleteItems = function (item) {
   return $.ajax({
-    url: app.host + '/new_items/' + item, // "http://book-json.herokuapp.com/books"
+    url: config.host + '/new_items/' + item, // "http://book-json.herokuapp.com/books"
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

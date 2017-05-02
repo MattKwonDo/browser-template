@@ -4,124 +4,83 @@ const showBooksTemplate = require('../templates/book-listing.handlebars')
 
 // read
 const getItemsSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   const showBooksHtml = showBooksTemplate({ items: data.new_items })
   // debugger;
-  $('.content').html(showBooksHtml).order
-  console.log(data.new_items)
-  console.log(data.new_items[0])
-  console.log(data.new_items[0].id)
-  console.log(data.new_items[0].name)
-  console.log(data.new_items[0].user)
-  console.log(data.new_items[0].user_id)
-// is this needed??
-  $('.removeBooksButton').on('click', removeBooksSuccess)
+  $('.content').html(showBooksHtml) // .order
+  // console.log(data.new_items)
+  // console.log(data.new_items[0])
+  // console.log(data.new_items[0].id)
+  // console.log(data.new_items[0].name)
+  // console.log(data.new_items[0].user)
+  // console.log(data.new_items[0].user_id)
 }
 
-const getItem29Success = (data) => {
-  console.log(data)
-  // const showBooksHtml = showBooksTemplate({ items: data.new_item })
-  // debugger;
-  // $('.content').html(showBooksHtml)
-  console.log(data.new_item)
-  // console.log(data.new_item[0]) // doesn't work for individual item
-  console.log(data.new_item.id)
-  console.log(data.new_item.name)
-  console.log(data.new_item.user)
-  console.log(data.new_item.user_id)
-  $('.removeBooksButton').on('click', removeBooksSuccess)
+const getItemsFailure = () => { // (error) => {
+  // console.error(error)
 }
 
+// clear the screen
 const clearBooks = () => {
   $('.content').empty()
-}
-
-const getItemsFailure = (error) => {
-  console.error(error)
 }
 
 // create
 // need to update this to show the data with an ajax call possibly from the database, possibly with an append child, but that would be messier
 const createItemsSuccess = (data) => {
 // append data to the end with an append child?
-  console.log(data)
-  console.log(data.new_item)
-  console.log(data.new_item.id)
-  console.log(data.new_item.name)
-  console.log(data.new_item.user)
-  console.log(data.new_item.user_id)
-  // let book_id = data.new_item.id
-
-  console.log('data.new_items.id: ' + data.new_item.id)
+  // console.log(data)
+  // console.log(data.new_item)
+  // console.log(data.new_item.id)
+  // console.log(data.new_item.name)
+  // console.log(data.new_item.user)
+  // console.log(data.new_item.user_id)
+  // // let book_id = data.new_item.id
+  //
+  // console.log('data.new_items.id: ' + data.new_item.id)
   // $('.' + data.new_item.id).hide()
-  // const showBooksHtml = showBooksTemplate({ items: data.new_item })
-  // $('.content').append(showBooksHtml)
 }
 
-const createItemsFailure = (error) => {
-  console.error(error)
+const createItemsFailure = () => { // (error) => {
+  // console.error(error)
   $('#errors-create-item').text('Uh uh uh, you didnt say the magic word')
 }
 
 // update
 // need to update this to do an ajax method to delete the thing from the database
 const updateItemsSuccess = (data) => {
-  console.log(data)
-  console.log(data.new_item)
-  console.log(data.new_item.id)
-  console.log(data.new_item.name)
-  console.log(data.new_item.user)
-  console.log(data.new_item.user_id)
-  // let book_id = data.new_item.id
-
-  console.log('data.new_item.id: ' + data.new_item.id)
-  // $('.' + data.new_item.id).hide()
-}
-
-const updateItemsFailure = (error) => {
-  console.error(error)
-}
-
-// delete
-// this is redundant with the deleteItemsSuccess
-// need to update this to do an ajax method to delete the thing from the database
-const removeBooksSuccess = (data) => {
-  console.log(data)
-  console.log(data.target)
-  console.log(data.target.id)
-  console.log(data.target.class)
-
-  // console.log('new_item')
+  // console.log(data)
   // console.log(data.new_item)
   // console.log(data.new_item.id)
   // console.log(data.new_item.name)
   // console.log(data.new_item.user)
   // console.log(data.new_item.user_id)
-
+  // // let book_id = data.new_item.id
+  //
   // console.log('data.new_item.id: ' + data.new_item.id)
-  // $('.' + data.target.id).hide() // pulls id attribute for the clicked object and then hides it
-  $('.' + data.target.id).hide() // pulls id attribute for the clicked object and then hides it
-}
-const removeBooksFailure = (error) => {
-  console.error(error)
+  // $('.' + data.new_item.id).hide()
 }
 
+const updateItemsFailure = () => { // (error) => {
+  // console.error(error)
+}
+
+// delete
 // this is redundant with the removeBooksSuccess
 const deleteItemsSuccess = (id) => {
-  console.log('delete success')
-  console.log(id)
+  // console.log('delete success')
+  // console.log(id)
   $('#total-' + id).hide()
 }
 
-const deleteItemsFailure = (error) => {
-  console.error(error)
+const deleteItemsFailure = () => { // (error) => {
+  // console.error(error)
 }
 
 module.exports = {
   // read
   getItemsSuccess,
   getItemsFailure,
-  getItem29Success,
   clearBooks,
   // create
   createItemsSuccess,
@@ -130,8 +89,6 @@ module.exports = {
   updateItemsSuccess,
   updateItemsFailure,
   // delete
-  removeBooksSuccess,
-  removeBooksFailure,
   deleteItemsSuccess,
   deleteItemsFailure
 }
