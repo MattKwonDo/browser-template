@@ -15,10 +15,10 @@ require('./example')
 
 const authEvents = require('./auth/events')
 // handlebars
-const bookEvents = require('./books/events.js')
+const itemEvents = require('./items/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
   // handlebars
-  bookEvents.addHandlers()
+  itemEvents.addHandlers()
 })

@@ -1,5 +1,5 @@
 'use strict'
-const ui = require('../books/ui')
+const ui = require('../items/ui')
 
 const store = require('../store')
 
@@ -39,7 +39,7 @@ const signOutSuccess = () => {
   $('#change-password').hide()
   $('#show-screen').hide()
   $('#sign-out').hide()
-  ui.clearBooks()
+  ui.clearItems()
 }
 
 const signOutFailure = () => {
