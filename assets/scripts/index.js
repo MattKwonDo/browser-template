@@ -19,6 +19,9 @@ const itemEvents = require('./items/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
-  // handlebars
   itemEvents.addHandlers()
+  // hide things not-needed before sign in
+  $('#logInButton').hide()
+  $('#create-item').hide()
+  $('#getItemsButton').hide()
 })

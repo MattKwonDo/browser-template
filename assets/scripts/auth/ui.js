@@ -12,15 +12,21 @@ const signUpFailure = () => {
 
 const signInSuccess = (data) => {
   store.user = data.user
+  // hide modal
+  $('#myModal').modal('hide')
   // show diff modal pieces
   $('#change-password').show()
   $('#show-screen').show()
   $('#sign-out').show()
+  // show main page buttons
+  $('#logInButton').show()
+  $('#getItemsButton').show()
   // hide sign-up modal piece until sign-out
   $('#sign-up').hide()
   $('#sign-in').hide()
+  // clear sign in error text
   $('.errors-sign-in').text('')
-  $('#errors-sign-in-image').hide()
+  // $('#errors-sign-in-image').hide()
 }
 
 const signInFailure = () => {
@@ -39,6 +45,10 @@ const signOutSuccess = () => {
   $('#change-password').hide()
   $('#show-screen').hide()
   $('#sign-out').hide()
+  $('#spacer1').empty()
+  $('#create-item').hide()
+  $('#getItemsButton').hide()
+  $('#logInButton').hide()
   ui.clearItems()
 }
 

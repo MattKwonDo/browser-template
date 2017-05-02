@@ -9,6 +9,8 @@ const getItemsSuccess = (data) => {
   // debugger;
   $('.content').html(showItemsHtml) // .order
   $('.errors-create-item').empty()
+  $('#create-item').show()
+  $('#spacer1').text('List')
   // console.log(data.new_items)
   // console.log(data.new_items[0])
   // console.log(data.new_items[0].id)
