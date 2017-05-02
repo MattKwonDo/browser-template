@@ -13,16 +13,6 @@ const getItems = function () {
     }
   })
 }
-// read item 29
-const getItem29 = function () {
-  return $.ajax({
-    url: config.host + '/new_items/29',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
 
 // create
 // need to update this to use form input
@@ -64,7 +54,6 @@ const deleteItems = function (item) {
 
 module.exports = {
   getItems,
-  getItem29,
   createItem,
   updateItem,
   deleteItems

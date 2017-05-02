@@ -36,6 +36,7 @@ const createItemsSuccess = (data) => {
   // console.log(data.new_item.user_id)
   // $('.' + data.new_item.id).hide()
   $('.errors-create-item').text('click Get/Read Items! to see your item added to the list')
+  $('#create-item').trigger('reset')
 }
 
 const createItemsFailure = () => { // (error) => {

@@ -5,13 +5,15 @@
 body {
   background-color: $background-color;
   color: $font-color;
-  // https://codepen.io/M_J_Robbins/pen/NPRGjP
-  // background:url(http://www.mariomayhem.com/fun/smb_level_editor/images/overworld_bg.png);
-  //  background-repeat: repeat-x;
-  //  background-position: bottom;
-  //  background-color:#5E91FE;
-  //  height:80%;
-  //  position:relative;
+  background-position: bottom;
+  // position: relative;
+  background: url('../images/matterhorn1.jpg') ; // center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-repeat: repeat-x;
+  background-size: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 p {
@@ -75,4 +77,8 @@ img {
   margin: 0 auto;
   overflow: hidden;
   // max-width: 350px;
+}
+
+.errors-create-item {
+  background-color: $box-background-color;
 }
