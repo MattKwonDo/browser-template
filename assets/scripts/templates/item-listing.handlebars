@@ -2,23 +2,13 @@
 
 <!-- {{> partial}} -->
 
-<div id="total-{{item.id}}" data-id="{{item.id}}" class="container col-md-12 box removeItems {{item.id}}">
-  <li class="container removeItems {{item.id}} list-unstyled">
-<!-- update -->
-    <form class="update-group {{item.id}} content" id="{{item.id}}">
-      <fieldset>
-        <input type="text" class="update-item-class {{item.id}}" id="input-{{item.id}}" placeholder="{{item.name}}" required>
-        <input type="submit" value="Update Item!" class="update-item-class">
-        <div class="errors-update-item" > </div>
-      </fieldset>
-    </form>
-<!-- remove -->
-    <form class="remove-group {{item.id}} content" id="{{item.id}}">
-      <fieldset>
-        <input type="submit" data-id="{{item.id}}" value="Remove Item!" class="remove-item-class">
-        <div class="errors-remove-item" > </div>
-      </fieldset>
+  <li id="total-{{item.id}}" data-id="{{item.id}}" class="container col-md-12 box items {{item.id}} list-unstyled">
+    <form class=" {{item.id}} update-item container" id="{{item.id}}">
+      <!-- update -->
+        <input type="text" id="input-{{item.id}}" placeholder="{{item.name}}" required>
+        <input type="submit" value="Update Item!" class="update-item">
+      <!-- remove -->
+        <input type="submit" id="{{item.id}}" value="Remove Item!" data-id="{{item.id}}" class="remove-item">
     </form>
   </li>
-</div>
 {{/each}}

@@ -32,7 +32,6 @@ const onCreateItem = function (event) {
   //   .then(ui.getItemsSuccess)
   //   .catch(ui.getItemsFailure) // , 1000)
 }
-
 // function sleep (milliseconds) {
 //   const start = new Date().getTime()
 //   for (let i = 0; i < 1e7; i++) {
@@ -87,10 +86,10 @@ const addHandlers = () => {
 // read
   $('#getItemsButton').on('click', onGetItems)
 // update
-  $('.content').on('submit', '.update-group', onUpdateItem)
+  $('.content').on('submit', '.update-item', onUpdateItem)
 // delete
   // $('#clearItemsButton').on('click', onClearItems)
-  $('.content').on('submit', '.remove-group', onDeleteItems)
+  $('.content').on('click', '.remove-item', onDeleteItems)
 }
 
 module.exports = {
