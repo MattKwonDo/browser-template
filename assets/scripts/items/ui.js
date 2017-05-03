@@ -1,6 +1,7 @@
 'use strict'
 
 const showItemsTemplate = require('../templates/item-listing.handlebars')
+const api = require('./api.js') // has ajax codes that connect to the backend
 
 // read
 const getItemsSuccess = (data) => {
@@ -37,8 +38,12 @@ const createItemsSuccess = (data) => {
   // console.log(data.new_item.user)
   // console.log(data.new_item.user_id)
   // $('.' + data.new_item.id).hide()
-  $('.errors-create-item').text('click Get/Read Items! to see your item added to the list')
+  // $('.errors-create-item').text('click Get/Read Items! to see your item added to the list')
   $('#create-item').trigger('reset')
+  // $('.content').empty()
+  api.getItems()
+    .then(getItemsSuccess)
+    .catch(getItemsFailure)
 }
 
 const createItemsFailure = () => { // (error) => {
@@ -54,6 +59,9 @@ const updateItemsSuccess = (data) => {
   // console.log(data.new_item.user)
   // console.log(data.new_item.user_id)
   // $('.' + data.new_item.id).hide()
+  api.getItems()
+    .then(getItemsSuccess)
+    .catch(getItemsFailure)
 }
 
 const updateItemsFailure = () => { // (error) => {

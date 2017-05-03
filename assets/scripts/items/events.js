@@ -32,20 +32,7 @@ const onCreateItem = function (event) {
     .catch(ui.createItemsFailure)
 // refresh the page with all data
     // .done(reGetItems())
-  // sleep(1000)
-  // setTimeout(
-  // api.getItems()
-  //   .then(ui.getItemsSuccess)
-  //   .catch(ui.getItemsFailure) // , 1000)
 }
-// function sleep (milliseconds) {
-//   const start = new Date().getTime()
-//   for (let i = 0; i < 1e7; i++) {
-//     if ((new Date().getTime() - start) > milliseconds) {
-//       break
-//     }
-//   }
-// }
 
 // update
 const onUpdateItem = (event) => {
