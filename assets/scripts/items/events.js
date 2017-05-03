@@ -64,12 +64,6 @@ const onUpdateItem = (event) => {
     .catch(ui.updateItemsFailure)
 }
 
-// hide
-// const onClearItems = (event) => {
-//   event.preventDefault()
-//   ui.clearItems()
-// }
-
 // delete
 const onDeleteItems = () => {
   event.preventDefault()
@@ -77,6 +71,11 @@ const onDeleteItems = () => {
   api.deleteItems(id)
     .then(ui.deleteItemsSuccess(id))
     .catch(ui.deleteItemsFailure)
+}
+
+// hide change pw text
+const onClearText = () => {
+  $('.errors-change-password').text('')
 }
 
 const addHandlers = () => {
@@ -90,6 +89,8 @@ const addHandlers = () => {
 // delete
   // $('#clearItemsButton').on('click', onClearItems)
   $('.content').on('click', '.remove-item', onDeleteItems)
+// hide change pw text $('.errors-change-password').text('Woohoo! Password changed successfully!')
+  $('#show-screen').on('click', onClearText)
 }
 
 module.exports = {
