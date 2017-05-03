@@ -4,7 +4,8 @@ const ui = require('../items/ui')
 const store = require('../store')
 
 const signUpSuccess = (data) => {
-  $('.errors-sign-up').text('')
+  $('.errors-sign-up').text('Woohoo! Signed up successfully!')
+  $('#sign-up').trigger('reset')
 }
 const signUpFailure = () => {
   $('.errors-sign-up').text('Uh uh uh, you didnt say the magic word')
@@ -23,7 +24,9 @@ const signInSuccess = (data) => {
   $('#getItemsButton').show()
   // hide sign-up modal piece until sign-out
   $('#sign-up').hide()
+  $('.errors-sign-up').text('')
   $('#sign-in').hide()
+  $('#sign-in').trigger('reset')
   // clear sign in error text
   $('.errors-sign-in').text('')
   // $('#errors-sign-in-image').hide()
@@ -49,6 +52,9 @@ const signOutSuccess = () => {
   $('#create-item').hide()
   $('#getItemsButton').hide()
   $('#logInButton').hide()
+  $('.errors-sign-up').text('')
+  $('.errors-sign-in').text('')
+  $('.errors-change-password').text('')
   ui.clearItems()
 }
 
@@ -56,7 +62,8 @@ const signOutFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  $('.errors-change-password').text('')
+  $('.errors-change-password').text('Woohoo! Password changed successfully!')
+  $('#change-password').trigger('reset')
 }
 const changePasswordFailure = () => {
   $('.errors-change-password').text('Uh uh uh, you didnt say the magic word')
