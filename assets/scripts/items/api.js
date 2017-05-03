@@ -6,7 +6,7 @@ const store = require('../store')
 // read
 const getItems = function () {
   return $.ajax({
-    url: config.host + '/new_items',
+    url: config.apiOrigin + '/new_items',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -18,7 +18,7 @@ const getItems = function () {
 // need to update this to use form input
 const createItem = function (ajaxSend) {
   return $.ajax({
-    url: config.host + '/new_items',
+    url: config.apiOrigin + '/new_items',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -31,7 +31,7 @@ const createItem = function (ajaxSend) {
 // this should run every time the list is updated in the browser? or when the user clicks save?
 const updateItem = function (item, ajaxSend) {
   return $.ajax({
-    url: config.host + '/new_items/' + item,
+    url: config.apiOrigin + '/new_items/' + item,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -44,7 +44,7 @@ const updateItem = function (item, ajaxSend) {
 // this should run every time the list item is deleted? or when the user clicks save?
 const deleteItems = function (item) {
   return $.ajax({
-    url: config.host + '/new_items/' + item,
+    url: config.apiOrigin + '/new_items/' + item,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
