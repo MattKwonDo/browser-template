@@ -11,6 +11,11 @@ const onGetItems = (event) => {
     .then(ui.getItemsSuccess)
     .catch(ui.getItemsFailure)
 }
+// const reGetItems = () => {
+//   api.getItems()
+//     .then(ui.getItemsSuccess)
+//     .catch(ui.getItemsFailure)
+// }
 
 // create
 const onCreateItem = function (event) {
@@ -26,6 +31,7 @@ const onCreateItem = function (event) {
     .then(ui.createItemsSuccess)
     .catch(ui.createItemsFailure)
 // refresh the page with all data
+    // .done(reGetItems())
   // sleep(1000)
   // setTimeout(
   // api.getItems()
