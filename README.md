@@ -7,6 +7,8 @@ This app is currently a list app that allows any one to create a username and pa
 
 The one unsolved problem that I have is how to make GET requests to re-load the current list whenever a new item is created, or and item is updated.
 
+[link to backend](https://github.com/MattKwonDo/p-2-list-rails)
+
 ## Project Idea
 
 What is your project idea?  How did you come up with it? Why? Who would use it?
