@@ -1,5 +1,12 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+## List App Overview
+[The list app](https://mattkwondo.github.io/p-2-list-browser/)
+
+This app is currently a list app that allows any one to create a username and password to create, read, update, and delete items in a list, from any modern browser. I originally had grand plans (see the Project Idea section below) for the app, but scaled it back in order to have a fully functional, error-free app by the deadline.
+
+The one unsolved problem that I have is how to make GET requests to re-load the current list whenever a new item is created, or and item is updated.
+
 ## Project Idea
 
 What is your project idea?  How did you come up with it? Why? Who would use it?
