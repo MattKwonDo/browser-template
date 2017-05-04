@@ -5,6 +5,7 @@ const ui = require('./ui.js') // has the code for displaying the front end after
 // const getFormFields = require(`../../../lib/get-form-fields`) // has the code that gets the form data
 
 // read
+// if you do this as a fat arrow function, you can't read 'this'
 const onGetItems = (event) => {
   event.preventDefault()
   api.getItems()
@@ -18,6 +19,7 @@ const onGetItems = (event) => {
 // }
 
 // create
+// if you do this as a fat arrow function, you can't read 'this'
 const onCreateItem = function (event) {
   event.preventDefault()
   const nameValue = document.getElementById('new-item-input').value
@@ -35,7 +37,8 @@ const onCreateItem = function (event) {
 }
 
 // update
-const onUpdateItem = (event) => {
+// if you do this as a fat arrow function, you can't read 'this'
+const onUpdateItem = function (event) {
   event.preventDefault()
   // console.log('event: ')
   // console.log(event)
@@ -43,7 +46,8 @@ const onUpdateItem = (event) => {
   // console.log('id: ' + id)
   const item = 'input-' + event.target.id
   // console.log('item: ' + item)
-  // console.log($(this).data('id'))
+  console.log(this.id)
+  console.log(this)
   // console.log(document)
   const nameValue = document.getElementById(item).value // this needs to be the id of the input field
   // console.log('field input :' + nameValue)
@@ -58,6 +62,7 @@ const onUpdateItem = (event) => {
 }
 
 // delete
+// if you do this as a fat arrow function, you can't read 'this'
 const onDeleteItems = () => {
   event.preventDefault()
   const id = event.target.id
