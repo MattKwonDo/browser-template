@@ -46,8 +46,8 @@ const onUpdateItem = function (event) {
   // console.log('id: ' + id)
   const item = 'input-' + event.target.id
   // console.log('item: ' + item)
-  console.log(this.id)
-  console.log(this)
+  // console.log(this.id)
+  // console.log(this)
   // console.log(document)
   const nameValue = document.getElementById(item).value // this needs to be the id of the input field
   // console.log('field input :' + nameValue)
