@@ -48,6 +48,7 @@ const signInFailure = () => {
 const signOutSuccess = () => {
   store.user = null
   $('#sign-up').show()
+  $('#sign-up').trigger('reset')
   $('#sign-in').show()
   $('#change-password').hide()
   $('#show-screen').hide()
@@ -59,6 +60,7 @@ const signOutSuccess = () => {
   $('.errors-sign-up').text('')
   $('.errors-sign-in').text('')
   $('.errors-change-password').text('')
+  $('#change-password').trigger('reset')
   ui.clearItems()
 }
 
