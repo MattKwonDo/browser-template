@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Ski List</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" type="text/x-scss" href="assets/styles/index.scss">
+      <!-- <link href='css/bootstrap.css' rel='stylesheet'> -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <!-- Button trigger modal -->
+          <button type="button" id="logInButton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Menu
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Main Menu</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group">
+
+                    <form id="sign-up">
+                      <fieldset>
+                        <legend>Sign up!</legend>
+                        <input type="text" name="credentials[email]" id="sign-up-email" placeholder="email please" required>
+                        <input type="password" name="credentials[password]" id="sign-up-password" placeholder="password please" required>
+                        <input type="password" name="credentials[password_confirmation]" id="sign-up-password-conf" placeholder="confirm password" required>
+                        <input type="submit" name="submit" value="Sign up!">
+                        <div class="errors-sign-up" > </div>
+                      </fieldset>
+                    </form>
+
+                    <form id="sign-in">
+                      <fieldset>
+                        <legend>Sign in!</legend>
+                        <input type="text" name="credentials[email]" id="sign-in-email" placeholder="email please" required>
+                        <input type="password" name="credentials[password]" id="sign-in-password" placeholder="password please" required>
+                        <input type="submit" name="submit" value="Sign in!" id='sign-in-box'>
+                        <div class="errors-sign-in" > </div>
+                        <div id="errors-sign-in-image" > </div>
+                      </fieldset>
+                    </form>
+
+                    <form id="sign-out">
+                      <fieldset>
+                        <legend>Sign out!</legend>
+                        <input type="submit" name="submit" value="Sign out!">
+                      </fieldset>
+                    </form>
+
+                    <form id="change-password">
+                      <fieldset>
+                        <legend>Change password!</legend>
+                        <input type="password" name="passwords[old]" id="change-password-old" placeholder="current password please" required>
+                        <input type="password" name="passwords[new]" id="change-password-new" placeholder="new password please" required>
+                        <input type="submit" name="submit" value="Change password!">
+                        <div class="errors-change-password" > </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg show-screen" data-dismiss="modal" id="show-screen">Check out your list!!!</button>
+
+                </div>
+              </div>
+            </div>
+          </div> <!-- end modal -->
+        </div>
+      </div>
+
+<!-- main page -->
+<!-- space -->
+  <h1 class="spacer" id="spacer0"> </h1>
+<!-- read -->
+  <button id="getItemsButton" class="btn btn-default">Load your list!</button>
+<!-- space -->
+  <h1 class="spacer" id="spacer1"> <!-- this text is filled in when data is loaded --> </h1>
+<!-- create -->
+  <h1 class="spacer" id="spacer00"> </h1>
+    <div class="input-group">
+      <form id="create-item">
+        <fieldset>
+          <input type="text" id="new-item-input" class="new-item-class" placeholder="new list item" required>
+          <input type="submit" value="Create / Add Item!" id="createItemsButton" class="new-item-class">
+          <div class="errors-create-item" > </div>
+        </fieldset>
+      </form>
+    </div>
+<!-- space -->
+  <h1 class="spacer " id="spacer0"> </h1>
+<!-- handlebars -->
+        <div class="container col-md-12 ">
+          <ul id="content" class="content">
+          </ul>
+        </div>
+
+    </body>
+</html>
