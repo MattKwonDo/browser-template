@@ -73,7 +73,10 @@ const onDeleteItems = () => {
 
 // hide change pw text
 const onClearText = () => {
+  // clear sign-up errors and text
   $('.errors-change-password').text('')
+  // $('#change-password').find('input:password, input:password, select, textarea').val('')
+  $('#change-password').trigger('reset')
 }
 
 const addHandlers = () => {

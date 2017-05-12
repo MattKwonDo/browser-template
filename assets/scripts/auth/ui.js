@@ -24,7 +24,11 @@ const signInSuccess = (data) => {
   $('#getItemsButton').show()
   // hide sign-up modal piece until sign-out
   $('#sign-up').hide()
+  // clear sign-up errors and text
   $('.errors-sign-up').text('')
+  // $('#sign-up').find('input:text, input:password, input:password, select, textarea').val('')
+  $('#sign-up').trigger('reset')
+  // hide sign-in stuff
   $('#sign-in').hide()
   $('#sign-in').trigger('reset')
   // clear sign in error text
@@ -64,6 +68,7 @@ const signOutFailure = () => {
 const changePasswordSuccess = (data) => {
   $('.errors-change-password').text('Woohoo! Password changed successfully!')
   $('#change-password').trigger('reset')
+  // $('#change-password').find('input:password, input:password, select, textarea').val('')
 }
 const changePasswordFailure = () => {
   $('.errors-change-password').text('Uh uh uh, you didnt say the magic word')
