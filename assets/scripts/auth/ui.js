@@ -55,12 +55,14 @@ const signOutSuccess = () => {
   $('#sign-out').hide()
   $('#spacer1').empty()
   $('#create-item').hide()
+  $('#create-item').trigger('reset')
   $('#getItemsButton').hide()
   $('#logInButton').hide()
   $('.errors-sign-up').text('')
   $('.errors-sign-in').text('')
   $('.errors-change-password').text('')
   $('#change-password').trigger('reset')
+  $('#content').trigger('reset')
   ui.clearItems()
 }
 
